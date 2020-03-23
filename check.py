@@ -1,6 +1,6 @@
-##############################
+###################################
 #Coded by : Hagi Rizki Suherlan
-##############################
+###################################
 
 
 
@@ -172,8 +172,9 @@ def menu():
 		print("-"*59)
 		menu()
 	if a == "/quit":
-		os.system("clear")
 		print("\033[32mTerima Kasih , Jaga Kesehatan ya :)"+B)
+                quit()
+
 	
 
 	if a == "/provinsi":
