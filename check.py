@@ -161,7 +161,7 @@ def menu():
 		print("\033[1mSource : Https://kawalcorona.com\033[0m [ COUNTRY DATA ] ")
 		print("-"*59)
 		c = 0
-		while c < 169:	
+		while c < 167:	
 			navigate(c)
 			c += 1
 		menu()
