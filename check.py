@@ -154,7 +154,7 @@ def display_global(negara,positif,sembuh,meninggal):
 	
 def menu():
 	logos()
-	navigate(35)
+	navigate(36)
 	a = input("\033[34m< COMMAND > " + B)
 	if a == "/all":
 		os.system("clear")
