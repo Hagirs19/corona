@@ -172,7 +172,7 @@ def menu():
 		print("-"*59)
 		menu()
 	if a == "/quit":
-		os.system("exit")
+		os.system("clear")
 		print("\033[32mTerima Kasih , Jaga Kesehatan ya :)"+B)
 	
 
