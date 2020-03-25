@@ -1,7 +1,8 @@
-##############################
-#Coded by : Hagi Rizki Suherlan
-##############################
-
+#####################################
+#Coded by : Hagi Rizki Suherlan    
+#####################################
+#Free Recode But do not change Author
+#####################################
 
 
 import requests
@@ -22,6 +23,7 @@ banner = """
 /provinsi        :    Menampilkan Kasus Di provinsi
 /global          :    Menampilkan Data Global
 /quit            :    Keluar Program
+
 """
 logo = '''\033[32m
             ____ _____     _____ ____  _  ___
@@ -44,6 +46,12 @@ def logos():
 	
 def check():
 	try:
+		c = requests.get("https://api.kawalcorona.com/indonesia")
+		c = c.text
+		d = open("json/indo.json","w")
+		d.write(c)
+		d.close()
+		
 		r = requests.get("https://api.kawalcorona.com")
 		r = r.text
 		f = open("json/data.json","w")
@@ -95,6 +103,19 @@ K = "\033[33m"
 H = "\033[32m"
 M = "\033[31m"
 B = "\033[0m"
+
+def indo():
+	f = open("json/indo.json","r")
+	f = json.load(f)
+	g = dict(f[0])
+	print("\033[1mNEGARA    : ", g['name'])
+	print(M + "POSITIF   : ",g['positif'])
+	print(H + "SEMBUH    : ",g['sembuh'])
+	print(U +"MENINGGAL : ",g['meninggal'], "\033[0m")
+	print("-"*59)
+
+	
+	
 
 def world():
 	f = open("json/positif.json","r")
@@ -154,7 +175,7 @@ def display_global(negara,positif,sembuh,meninggal):
 	
 def menu():
 	logos()
-	navigate(36)
+	indo()
 	a = input("\033[34m< COMMAND > " + B)
 	if a == "/all":
 		os.system("clear")
